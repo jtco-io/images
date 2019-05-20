@@ -12,7 +12,7 @@ build-helm:
     # PYTHON_VERSION: 3.7.3
   before_script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - cd python
+    - cd helm
 
     - export IMAGE_TAG_VERSIONED_BASE=$PYTHON_VERSION-alpine$ALPINE_VERSION
     - export IMAGE_VERSION=$IMAGE_BASE:$IMAGE_TAG_VERSIONED_BASE
