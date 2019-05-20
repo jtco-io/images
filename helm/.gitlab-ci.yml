@@ -33,7 +33,6 @@ build-helm:
     - echo $BASE_IMAGE
     - echo $IMAGE
 
-    - docker push $BASE_IMAGE
     - docker push $IMAGE
 
     - echo All done!
