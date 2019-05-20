@@ -13,3 +13,4 @@ stages:
 
 include:
   - local:  "helm/.gitlab-ci.yml"
+  - local:  "python/.gitlab-ci.yml"
