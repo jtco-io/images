@@ -29,7 +29,7 @@ build-python:
   after_script:
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
     - export GL_IMAGE=${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
-    - export IMAGE=${DIR}:${ALPINE_VERSION}
+    - export IMAGE=jtco-io/${DIR}:${ALPINE_VERSION}
 
     - echo pushing tags!
     - echo $BASE_IMAGE
