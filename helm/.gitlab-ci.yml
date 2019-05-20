@@ -25,7 +25,7 @@ build-helm:
       docker build
       --tag $GL_IMAGE
       --tag $IMAGE
-      --build-arg $IMAGE_BASE
+      --build-arg IMAGE_BASE
       .
   after_script:
     - echo pushing tags!
