@@ -1,3 +1,5 @@
+ARG IMAGE
+
 FROM $IMAGE
 
 RUN mkdir -p $WORK_DIR && \
