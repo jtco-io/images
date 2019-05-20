@@ -1,6 +1,6 @@
-ARG BASE_IMAGE=alpine:3.9
+ARG IMAGE_BASE
 
-FROM $BASE_IMAGE
+FROM $IMAGE_BASE
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
 ARG KUBE_LATEST_VERSION="v1.14.1"

@@ -4,19 +4,18 @@ build-helm:
 #    - schedules
   variables:
     DIR: "helm"
+    IMAGE_BASE: $IMAGE_BASE:$ALPINE_VERSION
+    GL_IMAGE: ${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
+    IMAGE: ${DOCKER_REGISTRY_ORG}/${DIR}:${ALPINE_VERSION}
   before_script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PW
     - cd $DIR
 
-    - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
-    - export GL_IMAGE=${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
-    - export IMAGE=${DOCKER_REGISTRY_ORG}/${DIR}:${ALPINE_VERSION}
-
     - echo The full image being build is
     - echo $GL_IMAGE
 
-    - docker pull ${BASE_IMAGE} && echo "success" || echo "doesn't exist yet"
+    - docker pull ${IMAGE_BASE} && echo "success" || echo "doesn't exist yet"
     - docker pull ${IMAGE} && echo "success" || echo "doesn't exist yet"
   script:
     - echo building tags latest and $IMAGE
@@ -24,15 +23,11 @@ build-helm:
       docker build
       --tag $GL_IMAGE
       --tag $IMAGE
-      --build-arg ${IMAGE}
+      --build-arg ${IMAGE_BASE}
       .
   after_script:
-    - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
-    - export GL_IMAGE=${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
-    - export IMAGE=${DOCKER_REGISTRY_ORG}/${DIR}:${ALPINE_VERSION}
-
     - echo pushing tags!
-    - echo $BASE_IMAGE
+    - echo $IMAGE_BASE
     - echo $IMAGE
 
     - docker push $GL_IMAGE
