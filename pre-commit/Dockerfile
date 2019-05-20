@@ -1,0 +1,3 @@
+ARG BASE_IMAGE=alpine:3.9
+
+FROM $BASE_IMAGE
