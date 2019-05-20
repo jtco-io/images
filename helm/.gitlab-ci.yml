@@ -1,4 +1,4 @@
-build-python:
+build-helm:
   stage: build
 #  only:
 #    - schedules
