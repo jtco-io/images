@@ -11,7 +11,7 @@ build-helm:
     - cd helm
 
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
-    - export IMAGE=${CI_REGISTRY_IMAGE}/helm:${ALPINE_VERSION}
+    - export IMAGE=${PUSH_REGISTERY}/helm:${ALPINE_VERSION}
 
     - echo The full image being build is
     - echo $IMAGE

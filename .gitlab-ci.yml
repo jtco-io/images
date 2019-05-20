@@ -1,7 +1,7 @@
 variables:
   IMAGE_BASE: alpine
   ALPINE_VERSION: "3.9"
-
+  PUSH_REGISTERY: registry.gitlab.com/jtco-io
 stages:
   - build
 
