@@ -9,8 +9,11 @@ variables:
   PUSH_REGISTERY: registry.gitlab.com/jtco-io/pub/images
 
 stages:
-  - build
+  - build-base
+  - build-
 
 include:
   - local:  "helm/.gitlab-ci.yml"
   - local:  "python/.gitlab-ci.yml"
+  - local:  "pipenv/.gitlab-ci.yml"
+  - local:  "pre-commit/.gitlab-ci.yml"
