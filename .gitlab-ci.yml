@@ -10,7 +10,7 @@ variables:
 
 stages:
   - build-base
-  - build-
+  - build
 
 include:
   - local:  "helm/.gitlab-ci.yml"
