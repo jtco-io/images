@@ -15,8 +15,7 @@ build-helm:
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
     - export IMAGE=${CI_REGISTRY_IMAGE}:${ALPINE_VERSION}
 
-    - echo The full image being build is $IMAGE_LATEST
-    - echo The python version is being build with python version and alpine $IMAGE_TAG_BASE.
+    - echo The full image being build is
     - echo $IMAGE
 
     - docker pull ${BASE_IMAGE} && echo "success" || echo "doesn't exist yet"
