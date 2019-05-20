@@ -9,7 +9,7 @@ build-python:
     - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PW
     - cd $DIR
 
-    - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
+    - export BASE_IMAGE=alpine:${ALPINE_VERSION}
     - export GL_IMAGE=${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
     - export IMAGE=${DOCKER_REGISTRY_ORG}/${DIR}:${ALPINE_VERSION}
 
