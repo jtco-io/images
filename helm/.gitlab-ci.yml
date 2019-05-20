@@ -14,13 +14,13 @@ build-helm:
     - echo $IMAGE
 
     - docker pull ${BASE_IMAGE} && echo "success" || echo "doesn't exist yet"
-    - docker pull ${IMAGE_VERSION} && echo "success" || echo "doesn't exist yet"
+    - docker pull ${IMAGE} && echo "success" || echo "doesn't exist yet"
   script:
     - echo building tags latest and $IMAGE_SHA
     - >
       docker build
       --tag $IMAGE
-      --build-arg ${BASE_IMAGE}
+      --build-arg ${IMAGE}
       .
   after_script:
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
