@@ -1,4 +1,4 @@
-build-cached-python:
+build-helm:
   image: docker:latest
   stage: build
 #  only:
