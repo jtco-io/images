@@ -1,3 +1,7 @@
+variables:
+  IMAGE_BASE: alpine
+  ALPINE_VERSION: "3.9"
+
 stages:
   - build
 

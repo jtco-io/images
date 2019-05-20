@@ -5,9 +5,7 @@ build-helm:
 #    - schedules
   services:
     - docker:dind
-  variables:
-    IMAGE_BASE: alpine
-    ALPINE_VERSION: "3.9"
+#  variables:
   before_script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - cd helm
