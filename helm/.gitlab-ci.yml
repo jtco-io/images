@@ -24,7 +24,7 @@ build-helm:
       .
   after_script:
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}
-    - export IMAGE=${CI_REGISTRY_IMAGE}:${ALPINE_VERSION}
+    - export IMAGE=${PUSH_REGISTERY}/helm:${ALPINE_VERSION}
 
     - echo pushing tags!
     - echo $BASE_IMAGE
