@@ -1,8 +1,8 @@
 build-cached-python:
   image: docker:latest
   stage: build
-  only:
-    - schedules
+#  only:
+#    - schedules
   services:
     - docker:dind
   variables:
