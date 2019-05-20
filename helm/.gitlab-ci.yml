@@ -7,7 +7,7 @@ build-helm:
     IMAGE_BASE: ${DOCKER_BASE_IMAGE}:${ALPINE_VERSION}
     GL_IMAGE: ${PUSH_REGISTERY}/${DIR}:${ALPINE_VERSION}
     # gitlab.com/jtcoio/pub/images/helm:alpine3.9
-    IMAGE: ${DOCKER_REGISTRY_ORG}/${DIR}:${$DOCKER_BASE_IMAGE}{ALPINE_VERSION}
+    IMAGE: ${DOCKER_REGISTRY_ORG}/${DIR}:${$DOCKER_BASE_IMAGE}${ALPINE_VERSION}
     # jtco/helm:alpine3.9
   before_script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
