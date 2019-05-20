@@ -2,4 +2,4 @@ stages:
   - build
 
 include:
-  - local:  "helm/.gitlab-ci.yaml"
+  - local:  "helm/.gitlab-ci.yml"
