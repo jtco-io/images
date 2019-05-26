@@ -24,7 +24,7 @@ build-pre-commit:
       docker build
       --tag $GL_IMAGE
       --tag $IMAGE
-      --build-arg ${IMAGE}
+      --build-arg IMAGE
       .
   after_script:
     - export BASE_IMAGE=${IMAGE_BASE}:${ALPINE_VERSION}

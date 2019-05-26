@@ -29,7 +29,7 @@ build-python:
       docker build
       --tag $GL_IMAGE
       --tag $IMAGE
-      --build-arg ${IMAGE}
+      --build-arg IMAGE
       .
   after_script:
     - export IMAGE_BASE=${IMAGE_BASE}:${ALPINE_VERSION}
